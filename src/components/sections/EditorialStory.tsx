@@ -56,7 +56,7 @@ export const EditorialStory = () => {
           <div className="flex flex-col gap-4 md:gap-8 mt-12 md:mt-24">
             <div className="relative overflow-hidden aspect-[3/4]">
               <img 
-                ref={el => imageRefs.current[0] = el}
+                ref={el => { imageRefs.current[0] = el; }}
                 src="https://images.unsplash.com/photo-1613588718956-c2e80305bf61?q=80&w=800&auto=format&fit=crop" 
                 alt="Detail" 
                 className="absolute inset-0 w-full h-full object-cover grayscale-[0.8]"
@@ -64,7 +64,7 @@ export const EditorialStory = () => {
             </div>
             <div className="relative overflow-hidden aspect-square">
               <img 
-                ref={el => imageRefs.current[1] = el}
+                ref={el => { imageRefs.current[1] = el; }}
                 src="https://images.unsplash.com/photo-1549491689-d91838be29d1?q=80&w=800&auto=format&fit=crop" 
                 alt="Detail" 
                 className="absolute inset-0 w-full h-full object-cover grayscale"
@@ -74,7 +74,7 @@ export const EditorialStory = () => {
           <div className="flex flex-col gap-4 md:gap-8">
             <div className="relative overflow-hidden aspect-square">
               <img 
-                ref={el => imageRefs.current[2] = el}
+                ref={el => { imageRefs.current[2] = el; }}
                 src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=800&auto=format&fit=crop" 
                 alt="Detail" 
                 className="absolute inset-0 w-full h-full object-cover grayscale-[0.8]"
@@ -82,7 +82,7 @@ export const EditorialStory = () => {
             </div>
             <div className="relative overflow-hidden aspect-[3/4]">
               <img 
-                ref={el => imageRefs.current[3] = el}
+                ref={el => { imageRefs.current[3] = el; }}
                 src="https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?q=80&w=800&auto=format&fit=crop" 
                 alt="Detail" 
                 className="absolute inset-0 w-full h-full object-cover grayscale-[0.8]"
