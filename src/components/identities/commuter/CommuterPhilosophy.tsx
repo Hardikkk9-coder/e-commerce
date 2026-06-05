@@ -1,0 +1,44 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export const CommuterPhilosophy = () => {
+  const containerRef = useRef<HTMLElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current || !textRef.current) return;
+
+    gsap.fromTo(textRef.current.children,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 60%',
+        }
+      }
+    );
+  }, []);
+
+  return (
+    <section ref={containerRef} className="bg-primary text-secondary py-32 md:py-48 px-6 md:px-12 border-t border-white/10">
+      <div className="max-w-4xl mx-auto text-center" ref={textRef}>
+        <h2 className="text-3xl md:text-5xl font-heading font-black uppercase tracking-tighter mb-12 leading-tight text-white/90">
+          The morning rush. The platform edge. The transition between spaces.
+        </h2>
+        <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto">
+          The Commuter wardrobe is engineered for the constant hum of urban movement. It merges technical weather-resistance with sharp, minimal tailoring—ensuring you remain protected from the elements without sacrificing the precision of your aesthetic. This is the modern armor for the city.
+        </p>
+      </div>
+    </section>
+  );
+};
